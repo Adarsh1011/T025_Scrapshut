@@ -3,6 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post, Category, Donation
 from django.views.generic import (ListView, DetailView, CreateView,UpdateView, DeleteView)
 from .forms import PostForm, Form
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -45,6 +47,7 @@ def PostDetailView(request,pk):
             donation.donor= request.user
             donation.category= post.category
             donation.save()
+            send_mail('Corona Rangers has some good news for you',f' {donation.donor} wants to donate  {qty} { donation.category}',settings.EMAIL_HOST_USER,['jmak0015@gmail.com'],fail_silently=False)
             return redirect('dashboard')
         else:
             pass
