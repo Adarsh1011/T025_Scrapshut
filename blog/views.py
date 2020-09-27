@@ -47,7 +47,7 @@ def PostDetailView(request,pk):
             donation.donor= request.user
             donation.category= post.category
             donation.save()
-            send_mail('Corona Rangers has some good news for you',f' {donation.donor} wants to donate  {qty} { donation.category}',settings.EMAIL_HOST_USER,['jmak0015@gmail.com'],fail_silently=False)
+            send_mail('Corona Rangers has some great news for you',f' {donation.donor} wants to donate  {qty} { donation.category}',settings.EMAIL_HOST_USER,['jmak0015@gmail.com'],fail_silently=False)
             return redirect('dashboard')
         else:
             pass
