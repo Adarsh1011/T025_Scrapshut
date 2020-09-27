@@ -1,5 +1,13 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<style>
+    article.media.content-section {
+    background-color: lavender;
+    border-radius: 20px;
+    box-shadow: -5px -5px 10px #ffffff60
+    ;
+}
+</style>
     <div class="row">
         <div class="col-md-8">
             {% for post in posts %}

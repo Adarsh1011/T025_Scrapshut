@@ -1,6 +1,13 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
+<style>
+  body {
+    background: url(../../../media/Abract01.png) no-repeat;
+    background-size: cover;
+  }
+</style>
     <div class="content-section">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
